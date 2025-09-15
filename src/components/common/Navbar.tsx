@@ -47,7 +47,7 @@ const handleSignOut = async () => {
             <Button
               variant="ghost"
               size="sm"
-            //   onClick={toggleTheme}
+              onClick={toggleTheme}
               className="p-2"
             >
               {theme.mode === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
