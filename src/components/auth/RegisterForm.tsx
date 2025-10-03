@@ -89,7 +89,7 @@ const RegisterForm: React.FC = () => {
 
       await signUp(formData.email, formData.password, userData);
       toast.success('Account created successfully!');
-      navigate('/dashboard');
+      navigate('/login');
     } catch (error) {
       toast.error((error as Error).message);
     } finally {

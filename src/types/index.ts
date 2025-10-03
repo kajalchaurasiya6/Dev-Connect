@@ -1,3 +1,4 @@
+import type { CreateUserData, User } from './user';
 
 export * from './user';
 export * from './post';
