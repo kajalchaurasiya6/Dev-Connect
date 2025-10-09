@@ -10,6 +10,7 @@ export interface User {
   githubUrl?: string;
   linkedinUrl?: string;
   portfolioUrl?: string;
+  isOnline?: boolean;
   availableForWork: boolean;
   joinedAt: Date;
 }

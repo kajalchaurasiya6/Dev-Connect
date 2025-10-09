@@ -6,9 +6,10 @@ import Badge from '../components/ui/Badge';
 import { Plus, Users, Code, MessageCircle, TrendingUp } from 'lucide-react';
 import LoadingSpinner from '../components/common/LoadSpinner';
 import type { User } from '../types';
+import DashboardCard from '../components/ui/DashboardCard';
 
 const Dashboard: React.FC = () => {
-  const { user }:{ user: User | null } = useAuth();
+  const { user }: { user: User | null } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,59 +41,14 @@ const Dashboard: React.FC = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Connections</p>
-                  <p className="text-2xl font-bold text-foreground">42</p>
-                </div>
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Projects</p>
-                  <p className="text-2xl font-bold text-foreground">8</p>
-                </div>
-                <Code className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Messages</p>
-                  <p className="text-2xl font-bold text-foreground">15</p>
-                </div>
-                <MessageCircle className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">Profile Views</p>
-                  <p className="text-2xl font-bold text-foreground">127</p>
-                </div>
-                <TrendingUp className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
+          <DashboardCard title='connections' value={'42'} Icon={Users} targetRoute='' />
+          <DashboardCard title='Projects' value={'8'} Icon={Code} targetRoute=''/>
+          <DashboardCard title='Messages' value={'15'} Icon={MessageCircle} targetRoute='/messages' />
+          <DashboardCard title='Profile Views' value={'127'} Icon={Users} targetRoute='' />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Quick Actions */}
             <Card>
               <CardHeader>
                 <CardTitle>Quick Actions</CardTitle>

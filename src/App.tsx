@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage";
 import RegisterForm from "./components/auth/RegisterForm";
 import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
+import MessagesPage from "./pages/MessagesPage";
+import MessagePage from "./pages/MessagePage";
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
 
@@ -104,6 +106,22 @@ const AppContent: React.FC = () => {
               <div className="min-h-screen flex items-center justify-center">
                 <h1 className="text-2xl font-bold">Settings Page - Coming Soon!</h1>
               </div>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/messages" 
+          element={
+            <ProtectedRoute>
+             <MessagesPage/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/messages/:id" 
+          element={
+            <ProtectedRoute>
+             <MessagePage/>
             </ProtectedRoute>
           } 
         />
