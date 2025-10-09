@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
           <DashboardCard title='connections' value={'42'} Icon={Users} targetRoute='' />
           <DashboardCard title='Projects' value={'8'} Icon={Code} targetRoute=''/>
           <DashboardCard title='Messages' value={'15'} Icon={MessageCircle} targetRoute='/messages' />
-          <DashboardCard title='Profile Views' value={'127'} Icon={Users} targetRoute='' />
+          <DashboardCard title='Profile Views' value={'127'} Icon={TrendingUp} targetRoute='' />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
